@@ -17,9 +17,4 @@
     <ProjectReference Include="..\Grade.Domain\Grade.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\GradeCases\Handlers\QueryHandlers\" />
-    <Folder Include="UseCases\GradeCases\Queries\" />
-  </ItemGroup>
-
 </Project>

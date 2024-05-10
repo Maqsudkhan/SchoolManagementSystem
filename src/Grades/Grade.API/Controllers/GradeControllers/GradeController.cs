@@ -1,5 +1,6 @@
 ﻿using Grade.Application.Abstractions;
 using Grade.Application.UseCases.GradeCases.Commands;
+using Grade.Application.UseCases.GradeCases.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,13 @@ namespace Grade.API.Controllers.GradeControllers
         public async Task<IActionResult> CreateGrade(CreateGradeCommand command)
         {
             var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllGrades()
+        {
+            var result = await _mediator.Send(new GetAllGradesQuery());
             return Ok(result);
         }
 
